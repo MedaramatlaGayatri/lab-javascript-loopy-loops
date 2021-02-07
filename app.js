@@ -1,3 +1,8 @@
+var ProGrad1 = 'Shanthi';
+console.log("The driver's name is "+ProGrad1);
+var ProGrad2 = 'Rahul';
+console.log("The navigator's name is "+ProGrad2);
+
 // Important Note - No Built-in functions to be used
 // Progression 1: Names and Input
 
@@ -6,12 +11,57 @@
 // 1.3 Create a variable `ProGrad-2` with the navigator's name.
 // 1.4 Print `"The navigator's name is YYYY"`.
 
+if(ProGrad1.length == ProGrad2.length){
+    console.log("Wow, you both have equally long names, "+ProGrad1.length+" characters");
+}else if(ProGrad1.length > ProGrad2.length){
+    console.log("The driver has the longest name, it has "+ProGrad1.length+" characters");
+}else{
+    console.log("It seems that the navigator has the longest name, it has "+ProGrad2.length+" characters");
+}
 // Progression 2: Control Statements - 1
 // 2.1. Depending on which name is longer, print:
 // - The driver has the longest name, it has XX characters. or
 // - It seems that the navigator has the longest name, it has XX characters. or
 // - Wow, you both have equally long names, XX characters!.
-
+var vowels = ['a','e','i','o','u'];
+containsVowels(ProGrad1);
+containsVowels(ProGrad2);
+function containsVowels(ProGrad1){
+    if(checkVowel(ProGrad1)){
+        console.log(ProGrad1);
+        var ar = [];
+        var k =0;
+        ProGrad1 =ProGrad1.toLowerCase();
+        for(let i = 0;i < ProGrad1.length;i++){
+            var x = ProGrad1.charAt(i);
+            if(vowels.includes(x)){
+                console.log(ProGrad1.charAt(i)+" ");
+                ar[k++] = i;
+            }
+        }
+        for(let i = 0;i < ar.length;i++){
+            console.log(ar[i]+" ");
+        }
+    }
+}
+function includes(ch){
+    for(let i = 0;i < vowels.length;i++){
+        if(vowels == ch){
+            return true;
+        }
+    }
+    return false;
+}
+function checkVowel(str){
+    str = str.toLowerCase();
+    for(let i = 0;i < str.length;i++){
+        var x = str.charAt(i);
+        if(vowels.includes(x)){
+            return true;
+        }
+    }
+    return false;
+}
 // 2.2. Check if the string contains vowels or not.
 // - If it contains vowels, print the name, and also print the vowel letters along with the vowel index. or
 // - print no vowels
@@ -20,8 +70,46 @@
 // 2.3. Check if the string contains uppercase and lowercase characters Xx
 // - Print the number of upper case characters
 // - Print the number of lower case characters
+console.log(no_of_uppercase_letters(ProGrad1));
+console.log(no_of_lowercase_letters(ProGrad1));
+console.log(no_of_uppercase_letters(ProGrad2));
+console.log(no_of_uppercase_letters(ProGrad2));
 
+function no_of_uppercase_letters(str){
+    let count = 0;
+    for(let i = 0;i < str.length;i++){
+        if(str.charAt(i)==str.charAt(i).toUpperCase()){
+            count++;
+          }
+    }
+    return count;
+}
 
+function no_of_lowercase_letters(str){
+    let count = 0;
+    for(let i = 0;i < str.length;i++){
+        if(str.charAt(i) == str.charAt(i).toLowerCase()){
+            count++;
+        }
+    }
+    return count;
+}
+
+var str = ProGrad1.toUpperCase();
+for(let i = 0;i < str.length;i++){
+    console.log(str.charAt(i)+" ");
+}
+str = ProGrad2.split("");
+console.log(str.reverse());
+console.log(ProGrad1+" "+ProGrad2);
+
+if(ProGrad1 < (ProGrad2) > 0){
+    console.log(" "+ProGrad1+" "+ProGrad2);
+}else if(ProGrad2 < (ProGrad1) > 0){
+    console.log(ProGrad2+" "+ProGrad1);
+}else{
+    console.log("What?! You both have the same name?");
+}
 // Progression 3: Control Statements - 2
 // 3.1 Print all the characters of the driver's name, separated by a space and in capitals i.e. "ProGrad"
 
